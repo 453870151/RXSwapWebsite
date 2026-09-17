@@ -5,8 +5,28 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>RX EXCHANGE</title>
-    <script type="module" crossorigin src="/assets/index-CYTFKZMg.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CKbQS1dI.css">
+    <!-- Dify 智能客服（全局加载，所有路由可见，不受 React 生命周期影响） -->
+    <script>
+      window.difyChatbotConfig = {
+        token: 'Zt8eT6wcpiyZ7Dd6',
+        baseUrl: 'http://cs.rxexchange.io',
+        inputs: {},
+        systemVariables: {},
+        userVariables: {},
+      };
+    </script>
+    <script src="http://cs.rxexchange.io/embed.min.js" id="Zt8eT6wcpiyZ7Dd6" defer></script>
+    <style>
+      #dify-chatbot-bubble-button {
+        background-color: #1C64F2 !important;
+      }
+      #dify-chatbot-bubble-window {
+        width: 24rem !important;
+        height: 40rem !important;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-mjhTkMnv.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C1RSM43S.css">
   </head>
   <body>
     <div id="root"></div>
