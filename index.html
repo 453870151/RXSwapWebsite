@@ -5,19 +5,25 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>RX EXCHANGE</title>
-    <!-- Dify 智能客服（全局加载，所有路由可见，不受 React 生命周期影响） -->
+    <!-- Dify 智能客服：按当前语言加载对应机器人（繁中=Jv1prPLekiqbQOER，英文=KU9rzBEh0VcZMWbB） -->
+    <!-- 必须带 dynamicScript:true，否则嵌入脚本会改挂 document.body.onload，在动态注入/切换语言场景下气泡永不创建 -->
     <script>
-      window.difyChatbotConfig = {
-        token: 'Zt8eT6wcpiyZ7Dd6',
-        baseUrl: 'https://cs.rxexchange.io',
-        inputs: {},
-        systemVariables: {},
-        userVariables: {},
-      };
+      (function () {
+        var lang = localStorage.getItem('language') || 'en';
+        var token = lang === 'zh-TW' ? 'Jv1prPLekiqbQOER' : 'KU9rzBEh0VcZMWbB';
+        window.difyChatbotConfig = {
+          token: token,
+          baseUrl: 'https://cs.rxexchange.io',
+          inputs: {},
+          systemVariables: {},
+          userVariables: {},
+          dynamicScript: true,
+        };
+      })();
     </script>
-    <script src="https://cs.rxexchange.io/embed.min.js" id="Zt8eT6wcpiyZ7Dd6" defer></script>
+    <script src="https://cs.rxexchange.io/embed.min.js" defer></script>
     <!-- Dify 气泡样式已迁移至 src/index.css（内联 <style> 会触发 vite 构建代理错误） -->
-    <script type="module" crossorigin src="/assets/index-OTh0S4mh.js"></script>
+    <script type="module" crossorigin src="/assets/index-CsHsLOwk.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-Ii0NCPfF.css">
   </head>
   <body>
